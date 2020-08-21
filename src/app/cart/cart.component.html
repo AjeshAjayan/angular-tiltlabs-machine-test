@@ -1,0 +1,24 @@
+<div class="c-container">
+    <div fxLayout="row warp" fxLayoutAlign="center">
+        <div fxFlex="80" fxLayoutAlign="center">
+            <h1>Cart: {{cartService.cart.length}} items </h1>
+        </div>
+        <mat-card class="m-t-2" *ngFor="let item of cartService.cart; let i = index" fxLayout="row warp"
+            fxLayoutAlign="space-around center" fxFlex="80">
+            <div fxFlex="20" fxLayoutAlign="space-evenly center">
+                <img width="50%" src={{item.image}} alt={{item.imageAlt}} class="img-container" />
+            </div>
+            <div fxFlex="30" fxLayoutAlign="space-evenly center">
+                <p> {{item.title}} </p> 
+            </div>
+            <div fxFlex="30" fxLayoutAlign="space-evenly center">
+                <p> RS {{item.rate}} </p>
+            </div>
+            <div fxFlex="20" fxLayoutAlign="space-evenly center">
+                <button (click)="cartService.removeFromCart(i)" mat-fab color="primary">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </mat-card>
+    </div>
+</div>

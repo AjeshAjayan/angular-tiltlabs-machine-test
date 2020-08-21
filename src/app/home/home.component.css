@@ -1,0 +1,15 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 2em;
+  }
+  
+  .example-header-image {
+    background-image: url('../../assets/images/logo.jpg');
+    background-size: cover;
+  }
+
+  .c-tool-bar {
+    margin-top: 2px;
+    background-color: #5e6dc4;
+  }
+  

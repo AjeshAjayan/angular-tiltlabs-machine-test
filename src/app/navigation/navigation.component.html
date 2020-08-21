@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+    <mat-toolbar class="fixed-nav" fxLayout="row" fxLayoutAlign="space-between center" color="primary">
+      <div>
+        <span class="pointer" routerLink="/antique/home" > Antique </span>
+      </div>
+      <div>
+        <mat-icon
+          routerLink="/antique/wishlist"
+          [matBadge]="wishlistService.wishlist.length"
+          matBadgeColor="warn"class="example-icon"
+          aria-hidden="false"
+          aria-label="Example heart icon">
+          favorite
+        </mat-icon>
+        <mat-icon 
+          routerLink="/antique/cart"
+          [matBadge]="cartService.cart.length"
+          matBadgeColor="warn"
+          class="example-icon"
+          aria-hidden="false"
+          aria-label="Example delete icon">
+          shopping_cart
+        </mat-icon>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,8 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { CartComponent } from './cart/cart.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'antique', children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'wishlist', component: WishlistComponent },
+      { path: 'cart', component: CartComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+    ] 
+  },
+  { path: '', redirectTo: 'antique', pathMatch: 'full' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
