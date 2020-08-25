@@ -1,24 +1,23 @@
-
-    <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>
-            <mat-form-field appearance="outline" class="c-input">
-                <mat-label>Search</mat-label>
-                <input matInput placeholder="Search" (keyup)="onSearch($event.target.value)">
-                <mat-icon matSuffix>search</mat-icon>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field appearance="outline" class="c-input">
-                <mat-label>Filter</mat-label>
-                <mat-select (selectionChange)="onFilter($event)">
-                    <mat-option [value]="1">Rate -- Lowest to Highest</mat-option>
-                    <mat-option [value]="2">Rate -- Highest to Lowest</mat-option>
-                    <mat-option [value]="3">New Arrivals</mat-option>
-                </mat-select>
-                <mat-icon matSuffix>filter_list</mat-icon>
-            </mat-form-field>
-        </div>
+<div class="t-m-6" fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+        <mat-form-field appearance="outline" class="c-input">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Search" (keyup)="onSearch($event.target.value)">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
     </div>
+    <div>
+        <mat-form-field appearance="outline" class="c-input">
+            <mat-label>Filter</mat-label>
+            <mat-select (selectionChange)="onFilter($event)">
+                <mat-option [value]="1">Rate -- Lowest to Highest</mat-option>
+                <mat-option [value]="2">Rate -- Highest to Lowest</mat-option>
+                <mat-option [value]="3">New Arrivals</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>filter_list</mat-icon>
+        </mat-form-field>
+    </div>
+</div>
 <div class="p-t-2" fxLayout="row wrap" fxLayoutAlign="space-around start">
     <div *ngFor="let antiquie of antiquies" fxFlex="30" fxLayout="column">
         <mat-card class="example-card">
@@ -35,7 +34,8 @@
             </mat-card-content>
             <mat-card-actions>
                 <button (click)="cartService.addToCart(antiquie)" color="primary" mat-button>Add to Cart</button>
-                <button (click)="wishlistService.addToWishList(antiquie)" color="primary" mat-button>Add to Wishlist</button>
+                <button (click)="wishlistService.addToWishList(antiquie)" color="primary" mat-button>Add to
+                    Wishlist</button>
             </mat-card-actions>
         </mat-card>
     </div>
